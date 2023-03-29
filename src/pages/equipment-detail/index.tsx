@@ -12,9 +12,7 @@ import image_5 from "@/assets/images/5.jpg";
 import ggMapImg from "@/assets/images/ggmap.jpg";
 
 const EquipmentTag = (content: string) => {
-    return (
-        <div className="bg-light-blue text-main text-sm font-normal px-[10px] py-[5px] rounded-md w-fit">{content}</div>
-    );
+    return <div className="bg-bg-1 text-main text-sm font-normal px-[10px] py-[5px] rounded-md w-fit">{content}</div>;
 };
 
 const priceOptions = [
@@ -24,9 +22,9 @@ const priceOptions = [
     { type: "Month", price: "4300" },
 ];
 const pricingOptionsRenderer = priceOptions.map((priceOption, index) => (
-    <div key={index} className="flex justify-between p-3 border-b border-solid border-light-blue">
+    <div key={index} className="flex justify-between p-3 border-b border-solid border-bg-1">
         <div>{priceOption.type}</div>
-        <div className="text-brown font-bold">${priceOption.price}</div>
+        <div className="text-primary font-bold">${priceOption.price}</div>
     </div>
 ));
 

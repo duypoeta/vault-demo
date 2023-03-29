@@ -7,17 +7,15 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'main': '#2B4254',
-      'brown': '#BBA748',
-      'dark-brown': '#AA8858',
-      'white': '#FFF',
-      'light-blue': '#EDF3FB',
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      emerald: colors.emerald,
-      indigo: colors.indigo,
-      yellow: colors.yellow,
+      main: 'var(--color-main)',
+      primary: {
+        DEFAULT: 'var(--color-primary)',
+        1: 'var(--color-primary-1)'
+      } ,
+      bg: {
+        1: 'var(--color-background-1)'
+      },
+      ...colors
     },
     extend: {},
   },

@@ -96,8 +96,8 @@ const Calendar = () => {
                                 day.isSelected && "text-white",
                                 !day.isSelected && !day.isToday && day.isCurrentMonth && "text-gray-900",
                                 !day.isSelected && !day.isToday && !day.isCurrentMonth && "text-black bg-gray-200",
-                                day.isSelected && day.isToday && "bg-dark-brown",
-                                day.isSelected && !day.isToday && "bg-brown",
+                                day.isSelected && day.isToday && "bg-primary-1",
+                                day.isSelected && !day.isToday && "bg-primary",
                                 !day.isSelected && "hover:bg-gray-200",
                                 day.isSelected && "font-semibold",
                                 "text-center h-8 w-full "

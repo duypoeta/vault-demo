@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon, BookmarkIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { useContext, useState } from "react";
+import { Dialog, Menu } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon, BookmarkIcon, UserCircleIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import Button from "../button";
+import { ThemeContext, ThemeContextValue } from "@/contexts/theme";
 
 const navigation = [
     { name: "Equipment", href: "#" },
@@ -10,8 +11,25 @@ const navigation = [
     { name: "Login | Sign Up", href: "#" },
 ];
 
-const Header = () => {
+interface HeaderProps {
+    handleChangeTheme?: (value: String) => void;
+}
+
+const classNames = (...classes: string[]) => {
+    return classes.filter(Boolean).join(" ");
+};
+
+const Header = (props: HeaderProps) => {
+    const { handleChangeTheme } = props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const theme = useContext(ThemeContext);
+
+    const setTheme = (theme: String) => {
+        if (handleChangeTheme) {
+            handleChangeTheme(theme);
+        }
+    };
 
     return (
         <header className="w-screen px-3 xl:px-[155px] h-[80px] bg-white">
@@ -46,7 +64,7 @@ const Header = () => {
                 </Dialog.Panel>
             </Dialog>
             <nav
-                className="h-full px-0 md:px-6 mx-auto flex items-center justify-between items-center xl:px-8"
+                className="h-full px-0 md:px-3 mx-auto flex items-center justify-between items-center"
                 aria-label="Global"
             >
                 <div className="flex flex-1 md:hidden">
@@ -91,6 +109,31 @@ const Header = () => {
                     theme="secondary"
                     className="hidden md:ml-5 md:ml-20  md:flex md:justify-end"
                 />
+                <Menu as="div" className="hidden relative md:inline-block text-left ml-3">
+                    <div>
+                        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            {theme.toUpperCase()}
+                            <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                        </Menu.Button>
+                    </div>
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div className="py-1">
+                            {ThemeContextValue.map((key, index) => (
+                                <Menu.Item key={index}>
+                                    <div
+                                        className={classNames(
+                                            theme === key ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                                            "block px-4 py-2 text-sm cursor-pointer"
+                                        )}
+                                        onClick={() => setTheme(key)}
+                                    >
+                                        {key.toUpperCase()}
+                                    </div>
+                                </Menu.Item>
+                            ))}
+                        </div>
+                    </Menu.Items>
+                </Menu>
             </nav>
         </header>
     );

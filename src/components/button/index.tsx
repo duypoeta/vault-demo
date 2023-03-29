@@ -14,11 +14,11 @@ const Button = (props: ButtonProps) => {
         "flex py-3 px-5 rounded-md ring-1 ring-inset gap-x-2 text-sm font-semibold items-center ";
 
     if (theme === "primary") {
-        buttonClassNames += "ring-brown text-white bg-brown border border-brown";
+        buttonClassNames += "ring-primary text-white bg-primary border border-primary";
     }
 
     if (theme === "secondary") {
-        buttonClassNames += "ring-dark-brown text-dark-brown bg-white border border-dark-brown";
+        buttonClassNames += "ring-primary-1 text-primary-1 bg-white border border-primary-1";
     }
 
     buttonClassNames += ` ${className}`;

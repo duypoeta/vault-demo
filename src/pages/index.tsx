@@ -1,13 +1,12 @@
+"use client";
+
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import styles from "@/styles/Home.module.css";
 import Header from "@/components/header";
 import Breadcrumb from "@/components/navigation/breadcrumbs";
 import EquipmentDetail from "./equipment-detail";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ThemeContext, ThemeContextValue } from "@/contexts/theme";
+import { useEffect, useState } from "react";
 
 const Body = () => {
     return (
@@ -19,6 +18,20 @@ const Body = () => {
 };
 
 export default function Home() {
+    const [theme, setTheme] = useState(ThemeContextValue[0]);
+
+    useEffect(() => {
+        const currentTheme = window.localStorage.getItem("theme")?.toLowerCase();
+        if (currentTheme && theme !== currentTheme) {
+            setTheme(currentTheme);
+        }
+    }, [theme]);
+
+    const handleChangeTheme = (newValue: String) => {
+        setTheme(newValue);
+        window.localStorage.setItem("theme", newValue.toLowerCase());
+    };
+
     return (
         <>
             <Head>
@@ -27,8 +40,12 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
-            <Body />
+            <ThemeContext.Provider value={theme}>
+                <div className={`theme-${theme.toLowerCase()}`}>
+                    <Header handleChangeTheme={handleChangeTheme} />
+                    <Body />
+                </div>
+            </ThemeContext.Provider>
         </>
     );
 }
