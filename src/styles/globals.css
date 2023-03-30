@@ -11,9 +11,10 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   --color-main: #2B4254;
-    --color-primary: #BBA748;
-    --color-primary-1: #AA8858;
-    --color-background-1: #EDF3FB;
+  --color-primary: #BBA748;
+  --color-primary-1: #AA8858;
+  --color-background-1: #EDF3FB;
+  --color-purle-800: #EDF3FB;
 }
 
 body {
@@ -49,6 +50,7 @@ br {
   content: "";
   margin: 10px 0;
 }
+
 @tailwind components;
 
 .theme-dark {
@@ -56,13 +58,15 @@ br {
   --color-primary: rgb(72, 112, 187);
   --color-primary-1: #2f00ff;
   --color-background-1: #ffa4a4;
+  --color-purle-800: #7700ff;
 }
 
 .theme-pink {
   --color-main: #ff82d9;
-  --color-primary: rgb(255, 29, 199);
-  --color-primary-1: #fa68ff;
+  --color-primary: rgb(255, 0, 255);
+  --color-primary-1: #ff64ff;
   --color-background-1: #e6e6e6;
+  --color-purle-800: #b86cff;
 }
 
 @tailwind utilities;

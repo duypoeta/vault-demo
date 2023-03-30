@@ -14,7 +14,9 @@ const Button = (props: ButtonProps) => {
         "flex py-3 px-5 rounded-md ring-1 ring-inset gap-x-2 text-sm font-semibold items-center ";
 
     if (theme === "primary") {
-        buttonClassNames += "ring-primary text-white bg-primary border border-primary";
+        const textStyles = "text-text-infomation hover:text-text-infomation-hover";
+        const borderStyle = "border border-4 border-borderColor-primary hover:border-borderColor "
+        buttonClassNames += `ring-primary bg-primary ${textStyles} ${borderStyle}`;
     }
 
     if (theme === "secondary") {
