@@ -10,9 +10,14 @@ import image_3 from "@/assets/images/3.jpg";
 import image_4 from "@/assets/images/4.jpg";
 import image_5 from "@/assets/images/5.jpg";
 import ggMapImg from "@/assets/images/ggmap.jpg";
+import DataTable from "@/components/datatable/demo-datatable";
 
 const EquipmentTag = (content: string) => {
-    return <div className="bg-bg-1 text-main text-sm font-normal px-[10px] py-[5px] rounded-md w-fit">{content}</div>;
+    return (
+        <div className="bg-background-tag text-main text-sm font-normal px-[10px] py-[5px] rounded-md w-fit">
+            {content}
+        </div>
+    );
 };
 
 const priceOptions = [
@@ -22,7 +27,7 @@ const priceOptions = [
     { type: "Month", price: "4300" },
 ];
 const pricingOptionsRenderer = priceOptions.map((priceOption, index) => (
-    <div key={index} className="flex justify-between p-3 border-b border-solid border-bg-1">
+    <div key={index} className="flex justify-between p-3 border-b border-solid border-background-1">
         <div>{priceOption.type}</div>
         <div className="text-primary font-bold">${priceOption.price}</div>
     </div>
@@ -91,13 +96,13 @@ const pricingOptionRender = (
                 title="Contact Us"
                 icon={<PhoneIcon className="growh-6 w-6" aria-hidden="true" />}
                 theme="secondary"
-                className="grow justify-center"
+                className="grow justify-center py-3 px-5"
             />
             <Button
                 title="Rent Today"
                 icon={<ChevronRightIcon className="h-6 w-6" aria-hidden="true" />}
                 theme="primary"
-                className="grow justify-center"
+                className="grow justify-center py-3 px-5"
             />
         </div>
     </div>
@@ -144,13 +149,17 @@ const descriptionRender = (
                 title="Add to Favorite"
                 icon={<BookmarkIcon className="h-6 w-6" aria-hidden="true" />}
                 theme="secondary"
+                className="py-3 px-5"
             />
             <Button
                 title="Rent Today"
                 icon={<ChevronRightIcon className="h-6 w-6" aria-hidden="true" />}
                 theme="primary"
+                className="py-3 px-5"
             />
         </div>
+
+        <DataTable classNames="mt-3 w-full" />
     </div>
 );
 

@@ -11,9 +11,34 @@ module.exports = {
       primary: {
         DEFAULT: 'var(--color-primary)',
         1: 'var(--color-primary-1)'
-      } ,
-      bg: {
-        1: 'var(--color-background-1)'
+      },
+      border: {
+        button: {
+          DEFAULT: 'var(--color-primary)',
+          1: 'var(--color-primary-1)'
+        },
+        datatable: {
+           DEFAULT: 'var(--color-primary)',
+        }
+      },
+      background: {
+        DEFAULT: 'var(--color-primary)',
+        1: 'var(--color-background-1)',
+
+        calendar: {
+          DEFAULT: 'var(--color-primary)',
+          1: 'var(--color-primary-1)'
+        },
+
+        tag: {
+          DEFAULT: 'var(--color-background-1)'
+        }
+      },
+      text: {
+        button: {
+          DEFAULT: 'white',
+          secondary: 'var(--color-primary-1)'
+        }
       },
       ...colors
     },

@@ -7,6 +7,8 @@ import Breadcrumb from "@/components/navigation/breadcrumbs";
 import EquipmentDetail from "./equipment-detail";
 import { ThemeContext, ThemeContextValue } from "@/contexts/theme";
 import { useEffect, useState } from "react";
+import { MediaInfoContext } from "@/contexts/MediaInfo";
+import { useMediaQuery } from "react-responsive";
 
 const Body = () => {
     return (

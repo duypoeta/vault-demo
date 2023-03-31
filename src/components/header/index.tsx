@@ -107,7 +107,7 @@ const Header = (props: HeaderProps) => {
                     title="My Favorite"
                     icon={<BookmarkIcon className="h-6 w-6" aria-hidden="true" />}
                     theme="secondary"
-                    className="hidden md:ml-5 md:ml-20  md:flex md:justify-end"
+                    className="hidden md:ml-5 md:ml-20  md:flex md:justify-end py-3 px-5"
                 />
                 <Menu as="div" className="hidden relative md:inline-block text-left ml-3">
                     <div>

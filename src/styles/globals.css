@@ -49,6 +49,36 @@ br {
   content: "";
   margin: 10px 0;
 }
+table {
+  border: 1px solid lightgray;
+  border-spacing: 0;
+}
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  padding: 5px 10px;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+  border-right: 1px solid lightgray;
+}
+
+td:last-child {
+  border: none;
+}
+
+td button {
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(255, 103, 33);
+}
 @tailwind components;
 
 .theme-dark {
@@ -59,10 +89,16 @@ br {
 }
 
 .theme-pink {
-  --color-main: #ff82d9;
-  --color-primary: rgb(255, 29, 199);
-  --color-primary-1: #fa68ff;
-  --color-background-1: #e6e6e6;
+  --color-main: #FF82D9;
+    --color-primary: rgb(255, 0, 255);
+    --color-primary-1: #FF64FF;
+    --color-background-1: #E6E6E6;
+    --color-purple-800: #B86CFF;
+    --background-color-button: var(--color-primary);
+    --background-color-button-primary-hover: #F15C82;
 }
 
+tr:nth-child(even) {
+  background-color: var(--color-background-1);
+}
 @tailwind utilities;

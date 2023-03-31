@@ -10,15 +10,14 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
     const { theme, icon, title, className } = props;
 
-    let buttonClassNames: string =
-        "flex py-3 px-5 rounded-md ring-1 ring-inset gap-x-2 text-sm font-semibold items-center ";
+    let buttonClassNames: string = "flex rounded-md ring-1 ring-inset gap-x-2 text-sm font-semibold items-center ";
 
     if (theme === "primary") {
-        buttonClassNames += "ring-primary text-white bg-primary border border-primary";
+        buttonClassNames += "ring-background text-text-button bg-background border border-border-button";
     }
 
     if (theme === "secondary") {
-        buttonClassNames += "ring-primary-1 text-primary-1 bg-white border border-primary-1";
+        buttonClassNames += "ring-background-1 text-text-button-secondary bg-white border border-border-button-1";
     }
 
     buttonClassNames += ` ${className}`;
