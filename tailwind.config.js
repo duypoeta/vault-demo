@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     colors: {
+      text: {
+        infomation: {
+          DEFAULT: 'var(--color-purle-800)',
+          hover: 'white'
+        }
+      },
+      borderColor: {
+        DEFAULT: 'black',
+        primary: 'pink'
+      },
       main: 'var(--color-main)',
       primary: {
         DEFAULT: 'var(--color-primary)',

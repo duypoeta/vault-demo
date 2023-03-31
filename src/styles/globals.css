@@ -11,9 +11,10 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   --color-main: #2B4254;
-    --color-primary: #BBA748;
-    --color-primary-1: #AA8858;
-    --color-background-1: #EDF3FB;
+  --color-primary: #BBA748;
+  --color-primary-1: #AA8858;
+  --color-background-1: #EDF3FB;
+  --color-purle-800: #EDF3FB;
 }
 
 body {
@@ -86,6 +87,7 @@ td button {
   --color-primary: rgb(72, 112, 187);
   --color-primary-1: #2f00ff;
   --color-background-1: #ffa4a4;
+  --color-purle-800: #7700ff;
 }
 
 .theme-pink {
